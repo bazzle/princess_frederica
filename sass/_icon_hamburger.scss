@@ -1,0 +1,124 @@
+.hamburger{
+  width:30px;
+  height:30px;
+  position:relative;
+  &__line{
+    width:30px;
+    height:1px;
+    background-color:black;
+    position:absolute;
+    &.anim{
+      position:relative;
+    }
+    &.line1{
+      top:0;
+      left:0;
+        &.anim{
+          animation-name:anim-hamburger1;
+          animation-duration:.3s;
+          animation-fill-mode:forwards;
+        }
+        &.anim-rev{
+          animation-name:anim-hamburger1rev;
+          animation-duration:.3s;
+          animation-fill-mode:backwards;
+          animation-direction:reverse;
+        }
+    }
+    &.line2{
+      top:15px;
+      left:0;
+      &.anim{
+          animation-name:anim-hamburger2;
+          animation-duration:.3s;
+          animation-fill-mode:forwards;
+        }
+        &.anim-rev{
+          animation-name:anim-hamburger2rev;
+          animation-duration:.3s;
+          animation-fill-mode:backwards;
+          animation-direction:reverse;
+        }
+    }
+    &.line3{
+      top:30px;
+      left:0;
+      &.anim{
+          animation-name:anim-hamburger3;
+          animation-duration:.3s;
+          animation-fill-mode:forwards;
+        }
+        &.anim-rev{
+          animation-name:anim-hamburger3rev;
+          animation-duration:.3s;
+          animation-fill-mode:backwards;
+          animation-direction:reverse;
+        }
+    }
+  }
+}
+
+
+// animations
+
+@keyframes anim-hamburger1{
+  from{
+    top:0;
+    transform:rotate(0);
+  }
+  to{
+    top:15px;
+    transform:rotate(45deg);
+  }
+}
+
+@keyframes hamburger1rev{
+  from{
+    top:0;
+    transform:rotate(0);
+  }
+  to{
+    top:15px;
+    transform:rotate(45deg);
+  }
+}
+
+@keyframes hamburger2{
+  from{
+    opacity:1;
+  }
+  to{
+    opacity:0;
+  }
+}
+
+@keyframes hamburger2rev{
+  from{
+    opacity:1;
+  }
+  to{
+    opacity:0;
+  }
+}
+
+@keyframes hamburger3{
+  from{
+    top:30px;
+    transform:rotate(0);
+  }
+  to{
+    top:13px;
+    transform:rotate(-45deg);
+  }
+}
+
+@keyframes hamburger3rev{
+  from{
+    top:30px;
+    transform:rotate(0);
+  }
+  to{
+    top:13px;
+    transform:rotate(-45deg);
+  }
+}

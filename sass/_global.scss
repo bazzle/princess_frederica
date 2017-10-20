@@ -1,0 +1,165 @@
+$brand-color:gold;
+$alt-bg:darken($brand-color, 5%);
+$black:#000000;
+$white:#ffffff;
+
+
+
+// responsive mixins
+
+$bp1:500px;
+$bp2:1000px;
+
+@mixin bp($breakpoint){
+  @media only screen and (max-width:$breakpoint) {
+      @content;
+  }
+}
+
+@mixin bp-plus($breakpoint){
+  @media only screen and (min-width:$breakpoint) {
+      @content;
+  }
+}
+
+
+
+
+// global mixins and variables
+
+
+@mixin panel-height{
+  height:600px;
+  @include bp($bp2){
+    height:800px;
+  }
+  @include bp(700px){
+    height:1100px;
+  }
+}
+
+$header-height:80px;
+$textmarginmobile:4rem;
+
+
+// global anim mixins
+
+@mixin darkenbgonhover($color){
+  @keyframes darkenbg{
+    from{
+      background-color:$color;
+    }
+    to{
+      background-color:darken($color, 5%);
+    }
+  }
+  @keyframes darkenbgrev{
+    from{
+      background-color:darken($color, 5%);
+    }
+    to{
+      background-color:$color;
+    }
+  }
+}
+
+
+html, body{
+  overflow-x:hidden;
+  margin:0;
+  padding:0;
+}
+
+html{
+  font-family:sans-serif;
+  font-size:62.5%;
+}
+
+body{
+  font-size:1.6rem;
+}
+
+input, textarea, select, button{
+  font-size:inherit;
+}
+
+a{
+  color:inherit;
+}
+
+p, ul, ol{
+  padding:0;
+  margin:0;
+  line-height:1.5em;
+}
+
+h1, h2, h3, h4, h5{
+  font-size:inherit;
+  margin:0;
+  padding:0;
+  font-weight: normal;
+}
+
+main{
+  margin:0 auto;
+  max-width:2000px;
+  margin-top:$header-height;
+  @include bp($bp2){
+    margin-top:160px;
+  }
+}
+
+
+
+@mixin text-body{
+  line-height:1.5;
+  h1, h2, h3, h4, h5{
+    font-size:2em;
+    margin-bottom:2rem;
+  }
+  p, ol, ul{
+    margin-top:0;
+    margin-bottom:2rem;
+    max-width:50em;
+  }
+  ul{
+    padding-left:1em;
+    box-sizing:border-box;
+  }
+}
+
+
+
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+
+
+
+
+
+
+// Global layout
+
+
+.grid-row{
+  display:flex;
+  flex-wrap:nowrap;
+  .grid__1{
+    
+  }
+  .grid__2{
+    
+  }
+}
+
+

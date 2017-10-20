@@ -1,0 +1,99 @@
+.grid{
+  width:calc(100% - 10px);
+  display:flex;
+  padding:5px;
+  flex-direction:column;
+  @include bp-plus($bp2){
+    flex-direction:row;
+  }
+  &__row{
+    display:flex;
+    justify-content:flex-start;
+    width:100%;
+    flex-direction:column;
+    flex-grow:1;
+    @include bp-plus($bp2){
+      flex-direction:row;
+    }
+  }
+  @include bp-plus($bp2){
+    &--row_2{
+      .grid--1{
+        width:50%;
+      }
+      .grid--2{
+        width:100%;
+      }
+    }
+    &--row_3{
+      .grid--1{
+        width:33.33%;
+      }
+      .grid--2{
+        width:66.66%;
+      }
+      .grid--3{
+        width:100%;
+      }
+    }
+    &--row_4{
+      .grid--1{
+        width:25%;
+      }
+      .grid--2{
+        width:50%;
+      }
+      .grid--3{
+        width:75%;
+      }
+      .grid--4{
+        width:100%;
+      }
+    }
+    &--row_8{
+      .grid--1{
+        width:12.5%;
+      }
+      .grid--2{
+        width:25%;
+      }
+      .grid--3{
+        width:37.5%;
+      }
+      .grid--4{
+        width:50%;
+      }
+      .grid--5{
+        width:62.5%;
+      }
+      .grid--6{
+        width:75%;
+      }
+      .grid--7{
+        width:87.5%;
+      }
+      .grid--8{
+        width:100%;
+      }
+    }
+  }
+  &__item{
+    box-sizing:border-box;
+  	width:33.33%;
+    display:flex;
+    flex-direction:column;
+  	@include bp($bp1){
+  		width:50%;
+  	}
+  	@include bp($bp2){
+  		width:100%;
+      padding-left:$textmarginmobile;
+      padding-right:$textmarginmobile;
+  	}
+  }
+  &__text-padding{
+    @include bp-plus($bp2){
+      padding-left:5vw;
+    }
+  }
+}
