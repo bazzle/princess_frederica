@@ -1,0 +1,91 @@
+.arrow{
+  position:relative;
+  width:20px;
+  height:20px;
+  &__line{
+    width:20px;
+    height:2px;
+    background-color:black;
+    position:absolute;
+    right:5px;
+    top:calc(50% - 1px);
+    &.anim{
+      position:relative;
+    }
+  }
+}
+
+
+.triangle{
+  width:auto;
+  height:auto;
+  position:absolute;
+  right:0;
+  top:calc(50% - 1px);
+  &__line{
+    width:16px;
+    height:2px;
+    background-color:black;
+    position:absolute;
+    right:0;
+    top:0;
+    &.line-1{
+      transform:rotate(45deg);
+      top:-5px;
+      right:0;
+    }
+    &.line-2{
+      transform:rotate(-45deg);
+      top:5px;
+      right:0;
+    }
+  }
+}
+
+
+
+// Button states
+
+.button{
+  &:active, &:focus{
+    background-color:darken($bg-color, 2%);
+  }
+  &:focus{
+    outline:none;
+  }
+  &:hover{
+    .arrow__line{
+      animation-name:anim-arrow;
+      animation-duration:.5s;
+      animation-fill-mode:both;
+    }
+  }
+  &:not(:hover){
+    .arrow__line{
+      animation-name:anim-arrow-rev;
+      animation-duration:.5s;
+      animation-fill-mode:both;
+    }
+  }
+}
+
+
+// animations
+
+@keyframes anim-arrow{
+  from{
+    width:20px;
+  }
+  to{
+    width:30px;
+  }
+}
+
+@keyframes anim-arrow-rev{
+  from{
+    width:30px;
+  }
+  to{
+    width:20px;
+  }
+}
