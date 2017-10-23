@@ -12,7 +12,11 @@
         left:0;
         width:100%;
         padding:1em 0;
-        font-size:4em;
+        font-size:2em;
+        @include bp($bp1){
+            font-size:4em;
+        }
+        @include button($brand-color, $white);
     }
     &__site-title{
         width:100%;

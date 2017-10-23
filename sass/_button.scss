@@ -1,10 +1,8 @@
-$bg-color:$white;
 $height:80px;
-
 
 .button{
     font-size:$font-size-reset;
-  background-color:$bg-color;
+    background-color:white;
   padding:0 1em;
   width:auto;
   height:$height;
@@ -17,18 +15,6 @@ $height:80px;
   border-bottom:rgba(0,0,0,0.1) solid 1px;
   border-left:rgba(0,0,0,0.1) solid 1px;
   border-right:rgba(0,0,0,0.1) solid 1px;
-  &:active, &:focus, &:hover{
-    animation-name:darkenbg;
-    animation-duration:.5s;
-    animation-fill-mode:forwards;
-  }
-  &:not(:active, :focus, :hover){
-    animation-name:darkenbgrev;
-    animation-duration:.5s;
-    animation-fill-mode:forwards;
-  }
-
-  @include darkenbgonhover($bg-color);
 
   &__label{
     padding:0 1em;
@@ -49,20 +35,26 @@ $height:80px;
       padding:1em;
     }
   }
-
-  &--inbody{
-    font-weight:normal;
-    padding:1em 2em;
-    margin-bottom:1.4em;
-  }
-  &--inversed{
-    $bg-color:black;
-    background-color:$bg-color;
-    color:white;
-    font-weight:normal;
-    &:active, &:focus{
-      background-color:lighten($bg-color, 5%);
-    }
-  }
-
 }
+
+@mixin button($bg-color, $text-color){
+    .button{
+        color:$text-color;
+      background-color:$bg-color;
+      &:active, &:focus, &:hover{
+        animation-name:darkenbg;
+        animation-duration:.5s;
+        animation-fill-mode:forwards;
+      }
+      &:not(:active, :focus, :hover){
+        animation-name:darkenbgrev;
+        animation-duration:.5s;
+        animation-fill-mode:forwards;
+      }
+      @include darkenbgonhover($bg-color);
+    }
+}
+
+
+
+
