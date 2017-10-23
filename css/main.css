@@ -27,13 +27,6 @@ h1, h2, h3, h4, h5 {
   padding: 0;
   font-weight: normal; }
 
-main {
-  margin: 0 auto;
-  max-width: 2000px; }
-  @media only screen and (max-width: 1000px) {
-    main {
-      margin-top: 160px; } }
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -52,7 +45,7 @@ main {
   height: auto; }
   .header__crest {
     width: 100%;
-    max-width: 180px;
+    max-width: 150px;
     height: auto;
     display: block; }
     .header__crest img {
@@ -60,35 +53,35 @@ main {
       height: auto; }
   .header__main {
     padding: 4rem 0; }
-  .header__utility .panel__inner {
+  .header__utility {
     padding: 1em;
     display: flex;
     justify-content: flex-end; }
-    .header__utility .panel__inner span {
+    .header__utility span {
       padding: 0 .5em; }
   .header__nav {
-    height: 80px;
+    height: 60px;
     color: #ffffff;
-    background-color: #433ac7; }
+    background-color: #ffffff; }
   .header__nav-list {
     display: flex;
-    height: 80px; }
+    height: auto;
+    flex-direction: column;
+    border-right: rgba(0, 0, 0, 0.1) solid 1px; }
+    @media only screen and (min-width: 500px) {
+      .header__nav-list {
+        height: 60px;
+        flex-direction: row; } }
   .header__nav-item {
-    height: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
     padding: 0 2em;
-    background-color: #433ac7;
-    border-left: rgba(0, 0, 0, 0.1) solid 1px; }
-    .header__nav-item a {
-      text-decoration: none;
-      font-weight: bold; }
-    @media only screen and (max-width: 1000px) {
-      .header__nav-item {
-        border-top: rgba(0, 0, 0, 0.1) solid 1px;
-        width: 50%; }
-        .header__nav-item:nth-of-type(1) {
-          border-left: 0; } }
+    color: #433ac7;
+    border-left: rgba(0, 0, 0, 0.1) solid 1px;
+    text-decoration: none;
+    font-weight: bold;
+    flex-grow: 1; }
     .header__nav-item:active, .header__nav-item:focus, .header__nav-item:hover {
       animation-name: darkenbg;
       animation-duration: .5s;
@@ -98,67 +91,67 @@ main {
       animation-duration: .5s;
       animation-fill-mode: forwards; }
 
+.row {
+  width: calc(100% - 10px);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5px; }
+
 .grid {
   width: calc(100% - 10px);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5px;
+  flex-direction: column;
   display: flex;
-  padding: 5px;
-  flex-direction: column; }
+  justify-content: flex-start; }
   @media only screen and (min-width: 1000px) {
     .grid {
       flex-direction: row; } }
-  .grid__row {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    flex-direction: column;
-    flex-grow: 1; }
-    @media only screen and (min-width: 1000px) {
-      .grid__row {
-        flex-direction: row; } }
   @media only screen and (min-width: 1000px) {
-    .grid--row_2 .grid--1 {
+    .grid--row-2 .grid-1 {
       width: 50%; }
-    .grid--row_2 .grid--2 {
+    .grid--row-2 .grid-2 {
       width: 100%; }
-    .grid--row_3 .grid--1 {
+    .grid--row-3 .grid-1 {
       width: 33.33%; }
-    .grid--row_3 .grid--2 {
+    .grid--row-3 .grid-2 {
       width: 66.66%; }
-    .grid--row_3 .grid--3 {
+    .grid--row-3 .grid-3 {
       width: 100%; }
-    .grid--row_4 .grid--1 {
+    .grid--row-4 .grid-1 {
       width: 25%; }
-    .grid--row_4 .grid--2 {
+    .grid--row-4 .grid-2 {
       width: 50%; }
-    .grid--row_4 .grid--3 {
+    .grid--row-4 .grid-3 {
       width: 75%; }
-    .grid--row_4 .grid--4 {
+    .grid--row-4 .grid-4 {
       width: 100%; }
-    .grid--row_8 .grid--1 {
+    .grid--row-8 .grid-1 {
       width: 12.5%; }
-    .grid--row_8 .grid--2 {
+    .grid--row-8 .grid-2 {
       width: 25%; }
-    .grid--row_8 .grid--3 {
+    .grid--row-8 .grid-3 {
       width: 37.5%; }
-    .grid--row_8 .grid--4 {
+    .grid--row-8 .grid-4 {
       width: 50%; }
-    .grid--row_8 .grid--5 {
+    .grid--row-8 .grid-5 {
       width: 62.5%; }
-    .grid--row_8 .grid--6 {
+    .grid--row-8 .grid-6 {
       width: 75%; }
-    .grid--row_8 .grid--7 {
+    .grid--row-8 .grid-7 {
       width: 87.5%; }
-    .grid--row_8 .grid--8 {
+    .grid--row-8 .grid-8 {
       width: 100%; } }
   .grid__item {
     box-sizing: border-box;
     width: 33.33%;
     display: flex;
     flex-direction: column; }
-    @media only screen and (max-width: 500px) {
+    @media only screen and (min-width: 500px) {
       .grid__item {
         width: 50%; } }
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (min-width: 1000px) {
       .grid__item {
         width: 100%;
         padding-left: 4rem;
@@ -174,10 +167,10 @@ main {
   padding: 5px; }
   .grid-home__item {
     width: 25%; }
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (min-width: 1000px) {
       .grid-home__item {
         width: 50%; } }
-    @media only screen and (max-width: 500px) {
+    @media only screen and (min-width: 500px) {
       .grid-home__item {
         width: 100%; } }
   .grid-home__inner {
@@ -198,6 +191,232 @@ main {
 .panel_full-width {
   width: 100%; }
 
+.banner-hero {
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-image: url("../images/content/home-banner.jpg");
+  background-size: cover;
+  background-position: center center; }
+  .banner-hero__overlay {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em 0;
+    font-size: 4em; }
+  .banner-hero__site-title {
+    width: 100%;
+    max-width: 700px;
+    font-weight: bold;
+    padding-bottom: 1em; }
+
+.hamburger {
+  width: 30px;
+  height: 30px;
+  position: relative; }
+  .hamburger__line {
+    width: 30px;
+    height: 1px;
+    background-color: black;
+    position: absolute; }
+    .hamburger__line.anim {
+      position: relative; }
+    .hamburger__line.line1 {
+      top: 0;
+      left: 0; }
+      .hamburger__line.line1.anim {
+        animation-name: anim-hamburger1;
+        animation-duration: .3s;
+        animation-fill-mode: forwards; }
+      .hamburger__line.line1.anim-rev {
+        animation-name: anim-hamburger1rev;
+        animation-duration: .3s;
+        animation-fill-mode: backwards;
+        animation-direction: reverse; }
+    .hamburger__line.line2 {
+      top: 15px;
+      left: 0; }
+      .hamburger__line.line2.anim {
+        animation-name: anim-hamburger2;
+        animation-duration: .3s;
+        animation-fill-mode: forwards; }
+      .hamburger__line.line2.anim-rev {
+        animation-name: anim-hamburger2rev;
+        animation-duration: .3s;
+        animation-fill-mode: backwards;
+        animation-direction: reverse; }
+    .hamburger__line.line3 {
+      top: 30px;
+      left: 0; }
+      .hamburger__line.line3.anim {
+        animation-name: anim-hamburger3;
+        animation-duration: .3s;
+        animation-fill-mode: forwards; }
+      .hamburger__line.line3.anim-rev {
+        animation-name: anim-hamburger3rev;
+        animation-duration: .3s;
+        animation-fill-mode: backwards;
+        animation-direction: reverse; }
+
+@keyframes anim-hamburger1 {
+  from {
+    top: 0;
+    transform: rotate(0); }
+  to {
+    top: 15px;
+    transform: rotate(45deg); } }
+@keyframes hamburger1rev {
+  from {
+    top: 0;
+    transform: rotate(0); }
+  to {
+    top: 15px;
+    transform: rotate(45deg); } }
+@keyframes hamburger2 {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+@keyframes hamburger2rev {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+@keyframes hamburger3 {
+  from {
+    top: 30px;
+    transform: rotate(0); }
+  to {
+    top: 13px;
+    transform: rotate(-45deg); } }
+@keyframes hamburger3rev {
+  from {
+    top: 30px;
+    transform: rotate(0); }
+  to {
+    top: 13px;
+    transform: rotate(-45deg); } }
+.button {
+  font-size: 1.6rem;
+  background-color: #ffffff;
+  padding: 0 1em;
+  width: auto;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-top: rgba(0, 0, 0, 0.1) solid 1px;
+  border-bottom: rgba(0, 0, 0, 0.1) solid 1px;
+  border-left: rgba(0, 0, 0, 0.1) solid 1px;
+  border-right: rgba(0, 0, 0, 0.1) solid 1px; }
+  .button:active, .button:focus, .button:hover {
+    animation-name: darkenbg;
+    animation-duration: .5s;
+    animation-fill-mode: forwards; }
+  .button:not(:active, :focus, :hover) {
+    animation-name: darkenbgrev;
+    animation-duration: .5s;
+    animation-fill-mode: forwards; }
+@keyframes darkenbg {
+  from {
+    background-color: #ffffff; }
+  to {
+    background-color: #f2f2f2; } }
+@keyframes darkenbgrev {
+  from {
+    background-color: #f2f2f2; }
+  to {
+    background-color: #ffffff; } }
+  .button__label {
+    padding: 0 1em;
+    width: auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .button__icon {
+    padding: 0 1em;
+    width: auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .button__icon--standalone {
+      padding: 1em; }
+  .button--inbody {
+    font-weight: normal;
+    padding: 1em 2em;
+    margin-bottom: 1.4em; }
+  .button--inversed {
+    background-color: black;
+    color: white;
+    font-weight: normal; }
+    .button--inversed:active, .button--inversed:focus {
+      background-color: #0d0d0d; }
+
+.arrow {
+  position: relative;
+  width: 20px;
+  height: 20px; }
+  .arrow__line {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    right: 5px;
+    top: calc(50% - 1px); }
+    .arrow__line.anim {
+      position: relative; }
+
+.triangle {
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 1px); }
+  .triangle__line {
+    width: 16px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    right: 0;
+    top: 0; }
+    .triangle__line.line-1 {
+      transform: rotate(45deg);
+      top: -5px;
+      right: 0; }
+    .triangle__line.line-2 {
+      transform: rotate(-45deg);
+      top: 5px;
+      right: 0; }
+
+.button:active, .button:focus {
+  background-color: #fafafa; }
+.button:focus {
+  outline: none; }
+.button:hover .arrow__line {
+  animation-name: anim-arrow;
+  animation-duration: .5s;
+  animation-fill-mode: both; }
+.button:not(:hover) .arrow__line {
+  animation-name: anim-arrow-rev;
+  animation-duration: .5s;
+  animation-fill-mode: both; }
+
+@keyframes anim-arrow {
+  from {
+    width: 20px; }
+  to {
+    width: 30px; } }
+@keyframes anim-arrow-rev {
+  from {
+    width: 30px; }
+  to {
+    width: 20px; } }
 .hamburger {
   width: 30px;
   height: 30px;

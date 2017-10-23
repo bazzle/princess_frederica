@@ -1,28 +1,32 @@
+// Style
+
 $brand-color:rgb(67, 58, 199);
 $alt-bg:darken($brand-color, 5%);
 $black:#000000;
 $white:#ffffff;
 
+$border-feint:rgba(0,0,0,0.1) solid 1px;
 
-
-// responsive mixins
+// responsive
 
 $bp1:500px;
 $bp2:1000px;
 
 @mixin bp($breakpoint){
-  @media only screen and (max-width:$breakpoint) {
-      @content;
-  }
-}
-
-@mixin bp-plus($breakpoint){
   @media only screen and (min-width:$breakpoint) {
       @content;
   }
 }
 
+@mixin bp-minus($breakpoint){
+  @media only screen and (max-width:$breakpoint) {
+      @content;
+  }
+}
 
+// Typography
+
+$font-size-reset:1.6rem;
 
 
 // global mixins and variables
@@ -106,11 +110,6 @@ h1, h2, h3, h4, h5{
 }
 
 main{
-  margin:0 auto;
-  max-width:2000px;
-  @include bp($bp2){
-    margin-top:160px;
-  }
 }
 
 
