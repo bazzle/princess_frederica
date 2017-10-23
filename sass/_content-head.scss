@@ -1,0 +1,12 @@
+.content-head{
+    border-top:$border-feint;
+    &__intro{
+        @include bp($bp1){
+            font-size:1.6em;
+            border-right:$border-feint;
+        }
+    }
+    &__intro-inner{
+        padding:1em 1em 1em 0;
+    }
+}
