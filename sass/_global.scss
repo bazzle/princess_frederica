@@ -44,42 +44,35 @@ $font-size-reset:1.6rem;
 
 $textmarginmobile:4rem;
 
-// global anim mixins
 
-@mixin darkenbgonhover($color){
-  @keyframes darkenbg{
-    from{
-      background-color:$color;
+@mixin hover($text-color, $bg-color){
+    @keyframes darkenbg{
+      from{
+        background-color:$bg-color;
+      }
+      to{
+        background-color:darken($bg-color, 5%);
+      }
     }
-    to{
-      background-color:darken($color, 5%);
+    @keyframes darkenbgrev{
+      from{
+        background-color:darken($bg-color, 5%);
+      }
+      to{
+        background-color:$bg-color;
+      }
     }
-  }
-  @keyframes darkenbgrev{
-    from{
-      background-color:darken($color, 5%);
-    }
-    to{
-      background-color:$color;
-    }
-  }
-}
-
-
-@mixin button-hover{
+    color:$text-color;
+    background-color:$bg-color;
+    animation-name:darkenbgrev;
+    animation-duration:.5s;
+    animation-fill-mode:forwards;
   &:active, &:focus, &:hover{
     animation-name:darkenbg;
     animation-duration:.5s;
     animation-fill-mode:forwards;
   }
-  &:not(:active, :focus, :hover){
-    animation-name:darkenbgrev;
-    animation-duration:.5s;
-    animation-fill-mode:forwards;
-  }
 }
-
-
 
 
 
@@ -178,3 +171,15 @@ main{
 }
 
 
+
+
+
+// To delete
+
+.division{
+  display:block;
+  width:100%;
+  height:400px;
+  background-color:rgb(246, 246, 246);
+  margin-top:100px;
+}

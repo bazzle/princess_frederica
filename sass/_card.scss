@@ -22,7 +22,9 @@
         display:flex;
         justify-content:center;
         align-items:center;
-        @include button($brand-color, $white);
+        .button{
+            @include hover($brand-color, $white);
+        }
     }
     &__overlay-inner{
         display:block;

@@ -1,9 +1,8 @@
 .subnav{
+    padding-top:1em;
+    font-size:1.2em;
     &__item{
         display:block;
-        padding:2em 1em;
-        border-bottom:$border-feint;
-        border-right:$border-feint;
-        @include button-hover;
+        padding:1em 2em;
     }
 }

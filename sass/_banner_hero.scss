@@ -1,6 +1,6 @@
 .banner-hero{
     width:100%;
-    height:auto;
+    height:calc(100vh - #{$header-height});
     position:relative;
     background-image:url('../images/content/home-banner.jpg');
     background-size:cover;
@@ -11,12 +11,16 @@
         top:0;
         left:0;
         width:100%;
-        padding:1em 0;
+        height:100%;
+        display:flex;
+        align-items:center;
         font-size:2em;
         @include bp($bp1){
             font-size:4em;
         }
-        @include button($brand-color, $white);
+        .button{
+            @include hover($brand-color, $white);
+        }
     }
     &__site-title{
         width:100%;

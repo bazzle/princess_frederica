@@ -42,9 +42,22 @@ h1, h2, h3, h4, h5 {
   display: flex;
   flex-wrap: nowrap; }
 
+.division {
+  display: block;
+  width: 100%;
+  height: 400px;
+  background-color: #f6f6f6;
+  margin-top: 100px; }
+
 .button {
   font-size: 1.6rem;
-  background-color: white;
+  color: #433ac7;
+  background-color: #ffffff;
+  color: #433ac7;
+  background-color: #ffffff;
+  animation-name: darkenbgrev;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
   padding: 0 1em;
   width: auto;
   height: 80px;
@@ -54,9 +67,23 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
   cursor: pointer;
   border-top: rgba(0, 0, 0, 0.1) solid 1px;
-  border-bottom: rgba(0, 0, 0, 0.1) solid 1px;
   border-left: rgba(0, 0, 0, 0.1) solid 1px;
-  border-right: rgba(0, 0, 0, 0.1) solid 1px; }
+  border-right: rgba(0, 0, 0, 0.1) solid 1px;
+  border-bottom: rgba(0, 0, 0, 0.1) solid 1px; }
+@keyframes darkenbg {
+  from {
+    background-color: #ffffff; }
+  to {
+    background-color: #f2f2f2; } }
+@keyframes darkenbgrev {
+  from {
+    background-color: #f2f2f2; }
+  to {
+    background-color: #ffffff; } }
+  .button:active, .button:focus, .button:hover {
+    animation-name: darkenbg;
+    animation-duration: .5s;
+    animation-fill-mode: forwards; }
   .button__label {
     padding: 0 1em;
     width: auto;
@@ -75,17 +102,19 @@ h1, h2, h3, h4, h5 {
       padding: 1em; }
 
 .header {
-  height: auto; }
+  height: 270px; }
   .header__crest {
     width: 100%;
-    max-width: 150px;
+    max-width: 120px;
     height: auto;
     display: block; }
     .header__crest img {
       width: 100%;
       height: auto; }
   .header__main {
-    padding: 4rem 0; }
+    height: calc(100% - 60px);
+    display: flex;
+    align-items: center; }
   .header__utility {
     display: none;
     padding: 1em;
@@ -96,37 +125,57 @@ h1, h2, h3, h4, h5 {
         display: flex; } }
     .header__utility span {
       padding: 0 .5em; }
-  .header__nav {
-    height: 60px;
-    color: #ffffff;
-    background-color: #ffffff; }
-  .header__nav-list {
+
+.nav {
+  height: 60px;
+  color: #ffffff;
+  background-color: #ffffff;
+  border-top: rgba(0, 0, 0, 0.1) solid 1px; }
+  .nav__list {
     display: flex;
     height: auto;
     flex-direction: column;
     border-right: rgba(0, 0, 0, 0.1) solid 1px; }
     @media only screen and (min-width: 500px) {
-      .header__nav-list {
+      .nav__list {
         height: 60px;
         flex-direction: row; } }
-  .header__nav-item {
+  .nav__item {
     height: 60px;
     display: flex;
     align-items: center;
     padding: 0 2em;
-    color: #433ac7;
     border-left: rgba(0, 0, 0, 0.1) solid 1px;
     text-decoration: none;
     font-weight: bold;
-    flex-grow: 1; }
-    .header__nav-item:active, .header__nav-item:focus, .header__nav-item:hover {
+    flex-grow: 1;
+    color: #433ac7;
+    color: #433ac7;
+    background-color: #ffffff;
+    animation-name: darkenbgrev;
+    animation-duration: .5s;
+    animation-fill-mode: forwards; }
+@keyframes darkenbg {
+  from {
+    background-color: #ffffff; }
+  to {
+    background-color: #f2f2f2; } }
+@keyframes darkenbgrev {
+  from {
+    background-color: #f2f2f2; }
+  to {
+    background-color: #ffffff; } }
+    .nav__item:active, .nav__item:focus, .nav__item:hover {
       animation-name: darkenbg;
       animation-duration: .5s;
       animation-fill-mode: forwards; }
-    .header__nav-item:not(:active, :focus, :hover) {
-      animation-name: darkenbgrev;
-      animation-duration: .5s;
-      animation-fill-mode: forwards; }
+
+.subnav {
+  padding-top: 1em;
+  font-size: 1.2em; }
+  .subnav__item {
+    display: block;
+    padding: 1em 2em; }
 
 .row {
   width: calc(100% - 10px);
@@ -210,7 +259,7 @@ h1, h2, h3, h4, h5 {
 
 .banner-hero {
   width: 100%;
-  height: auto;
+  height: calc(100vh - 270px);
   position: relative;
   background-image: url("../images/content/home-banner.jpg");
   background-size: cover;
@@ -221,32 +270,33 @@ h1, h2, h3, h4, h5 {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1em 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
     font-size: 2em; }
     @media only screen and (min-width: 500px) {
       .banner-hero__overlay {
         font-size: 4em; } }
     .banner-hero__overlay .button {
-      color: #ffffff;
-      background-color: #433ac7; }
+      color: #433ac7;
+      background-color: #ffffff;
+      animation-name: darkenbgrev;
+      animation-duration: .5s;
+      animation-fill-mode: forwards; }
+@keyframes darkenbg {
+  from {
+    background-color: #ffffff; }
+  to {
+    background-color: #f2f2f2; } }
+@keyframes darkenbgrev {
+  from {
+    background-color: #f2f2f2; }
+  to {
+    background-color: #ffffff; } }
       .banner-hero__overlay .button:active, .banner-hero__overlay .button:focus, .banner-hero__overlay .button:hover {
         animation-name: darkenbg;
         animation-duration: .5s;
         animation-fill-mode: forwards; }
-      .banner-hero__overlay .button:not(:active, :focus, :hover) {
-        animation-name: darkenbgrev;
-        animation-duration: .5s;
-        animation-fill-mode: forwards; }
-@keyframes darkenbg {
-  from {
-    background-color: #433ac7; }
-  to {
-    background-color: #3b33b4; } }
-@keyframes darkenbgrev {
-  from {
-    background-color: #3b33b4; }
-  to {
-    background-color: #433ac7; } }
   .banner-hero__site-title {
     width: 100%;
     max-width: 700px;
@@ -363,26 +413,25 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
     align-items: center; }
     .card__overlay .button {
-      color: #ffffff;
-      background-color: #433ac7; }
+      color: #433ac7;
+      background-color: #ffffff;
+      animation-name: darkenbgrev;
+      animation-duration: .5s;
+      animation-fill-mode: forwards; }
+@keyframes darkenbg {
+  from {
+    background-color: #ffffff; }
+  to {
+    background-color: #f2f2f2; } }
+@keyframes darkenbgrev {
+  from {
+    background-color: #f2f2f2; }
+  to {
+    background-color: #ffffff; } }
       .card__overlay .button:active, .card__overlay .button:focus, .card__overlay .button:hover {
         animation-name: darkenbg;
         animation-duration: .5s;
         animation-fill-mode: forwards; }
-      .card__overlay .button:not(:active, :focus, :hover) {
-        animation-name: darkenbgrev;
-        animation-duration: .5s;
-        animation-fill-mode: forwards; }
-@keyframes darkenbg {
-  from {
-    background-color: #433ac7; }
-  to {
-    background-color: #3b33b4; } }
-@keyframes darkenbgrev {
-  from {
-    background-color: #3b33b4; }
-  to {
-    background-color: #433ac7; } }
   .card__overlay-inner {
     display: block;
     text-align: center; }
@@ -400,6 +449,9 @@ h1, h2, h3, h4, h5 {
     background-image: url(../images/content/home-grid-2-0.jpg); }
   .card-2-1 {
     background-image: url(../images/content/home-grid-2-1.jpg); }
+
+footer .panel {
+  padding: 2em 0; }
 
 .hamburger {
   width: 30px;
@@ -487,20 +539,6 @@ h1, h2, h3, h4, h5 {
   to {
     top: 13px;
     transform: rotate(-45deg); } }
-.subnav__item {
-  display: block;
-  padding: 2em 1em;
-  border-bottom: rgba(0, 0, 0, 0.1) solid 1px;
-  border-right: rgba(0, 0, 0, 0.1) solid 1px; }
-  .subnav__item:active, .subnav__item:focus, .subnav__item:hover {
-    animation-name: darkenbg;
-    animation-duration: .5s;
-    animation-fill-mode: forwards; }
-  .subnav__item:not(:active, :focus, :hover) {
-    animation-name: darkenbgrev;
-    animation-duration: .5s;
-    animation-fill-mode: forwards; }
-
 .content-head {
   border-top: rgba(0, 0, 0, 0.1) solid 1px; }
   @media only screen and (min-width: 500px) {
