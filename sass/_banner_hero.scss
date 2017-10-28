@@ -18,9 +18,6 @@
         @include bp($bp1){
             font-size:4em;
         }
-        .button{
-            @include hover($brand-color, $white);
-        }
     }
     &__site-title{
         width:100%;

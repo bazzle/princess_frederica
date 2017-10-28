@@ -1,12 +1,34 @@
-.content-head{
-    border-top:$border-feint;
+.content{
     &__intro{
+        padding-top:1em;
+        padding-bottom:1em;
+        p{
+            max-width:800px;
+        }
         @include bp($bp1){
-            font-size:1.6em;
-            border-right:$border-feint;
+            font-size:1.5em;
+        }
+        &--homepage{
+            padding:2em 0;
         }
     }
-    &__intro-inner{
-        padding:1em 1em 1em 0;
+    &__body{
+        padding-top:1em;
+        padding-bottom:4em;
+        p, ul, ol{
+            padding-bottom:1.2em;
+            max-width:800px;
+        }
+        h1, h2, h3, h4, h5{
+            padding-bottom:1em;
+            padding-right:1em;
+            font-size:1.7em;
+        }
+        ul{
+            li{
+                margin-left:1em;
+                width:calc(100% - 1em);
+            }
+        }
     }
 }

@@ -12,8 +12,18 @@ module.exports = function(grunt) {
           ]
         },
         dist: {
+          src: 'css/main.css'
+        }
+      },
+      svgstore: {
+        options: {
+          svg: {
+            style: "display:none;"  
+          }
+        },
+        default : {
           files: {
-            'css/main.css': 'css/main.scss'
+            'dest.svg': ['svg/*.svg']
           }
         }
       },
@@ -25,17 +35,9 @@ module.exports = function(grunt) {
         }
       },
       watch: {
-        src: {
+        sass: {
             files: ['sass/*.scss'],
             tasks: ['sass']
-        }
-      },
-      purifycss: {
-        options: {},
-        target: {
-          src: ['test/*.html'],
-          css: ['test/css/main.css'],
-          dest: 'test/css/purestyles.css'
         }
       }
     });
@@ -45,4 +47,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-purifycss');
+  grunt.loadNpmTasks('grunt-svgstore');
   };

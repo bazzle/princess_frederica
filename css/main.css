@@ -58,9 +58,9 @@ h1, h2, h3, h4, h5 {
   animation-name: darkenbgrev;
   animation-duration: .5s;
   animation-fill-mode: forwards;
-  padding: 0 1em;
+  padding: 0 2em;
   width: auto;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,19 +85,19 @@ h1, h2, h3, h4, h5 {
     animation-duration: .5s;
     animation-fill-mode: forwards; }
   .button__label {
-    padding: 0 1em;
+    padding-right: 1em;
     width: auto;
-    height: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center; }
   .button__icon {
-    padding: 0 1em;
-    width: auto;
-    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center; }
+    .button__icon svg {
+      width: 1em;
+      height: 1em; }
     .button__icon--standalone {
       padding: 1em; }
 
@@ -247,7 +247,9 @@ h1, h2, h3, h4, h5 {
       padding-left: 5vw; } }
 
 .homepage-grid {
-  padding: 5px 0; }
+  padding: 1px 0; }
+  .homepage-grid .card {
+    border: 10px solid #ffffff; }
 
 .panel {
   width: 100%;
@@ -277,27 +279,33 @@ h1, h2, h3, h4, h5 {
     @media only screen and (min-width: 500px) {
       .banner-hero__overlay {
         font-size: 4em; } }
-    .banner-hero__overlay .button {
-      color: #433ac7;
-      background-color: #ffffff;
-      animation-name: darkenbgrev;
-      animation-duration: .5s;
-      animation-fill-mode: forwards; }
-@keyframes darkenbg {
-  from {
-    background-color: #ffffff; }
-  to {
-    background-color: #f2f2f2; } }
-@keyframes darkenbgrev {
-  from {
-    background-color: #f2f2f2; }
-  to {
-    background-color: #ffffff; } }
-      .banner-hero__overlay .button:active, .banner-hero__overlay .button:focus, .banner-hero__overlay .button:hover {
-        animation-name: darkenbg;
-        animation-duration: .5s;
-        animation-fill-mode: forwards; }
   .banner-hero__site-title {
+    width: 100%;
+    max-width: 700px;
+    font-weight: bold;
+    padding-bottom: 1em; }
+
+.banner {
+  width: 100%;
+  height: calc(80vh - 270px);
+  position: relative;
+  background-image: url("../images/content/banner1.jpg");
+  background-size: cover;
+  background-position: center center; }
+  .banner__overlay {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 2em; }
+    @media only screen and (min-width: 500px) {
+      .banner__overlay {
+        font-size: 4em; } }
+  .banner__page-title {
     width: 100%;
     max-width: 700px;
     font-weight: bold;
@@ -390,7 +398,6 @@ h1, h2, h3, h4, h5 {
     top: 13px;
     transform: rotate(-45deg); } }
 .card {
-  border: 5px solid #ffffff;
   box-sizing: border-box;
   width: 100%;
   height: 0;
@@ -452,6 +459,11 @@ h1, h2, h3, h4, h5 {
 
 footer .panel {
   padding: 2em 0; }
+
+.breadcrumb {
+  padding: 1em 0; }
+  .breadcrumb__item {
+    padding-right: .7em; }
 
 .hamburger {
   width: 30px;
@@ -539,13 +551,28 @@ footer .panel {
   to {
     top: 13px;
     transform: rotate(-45deg); } }
-.content-head {
-  border-top: rgba(0, 0, 0, 0.1) solid 1px; }
+.content__intro {
+  padding-top: 1em;
+  padding-bottom: 1em; }
+  .content__intro p {
+    max-width: 800px; }
   @media only screen and (min-width: 500px) {
-    .content-head__intro {
-      font-size: 1.6em;
-      border-right: rgba(0, 0, 0, 0.1) solid 1px; } }
-  .content-head__intro-inner {
-    padding: 1em 1em 1em 0; }
+    .content__intro {
+      font-size: 1.5em; } }
+  .content__intro--homepage {
+    padding: 2em 0; }
+.content__body {
+  padding-top: 1em;
+  padding-bottom: 4em; }
+  .content__body p, .content__body ul, .content__body ol {
+    padding-bottom: 1.2em;
+    max-width: 800px; }
+  .content__body h1, .content__body h2, .content__body h3, .content__body h4, .content__body h5 {
+    padding-bottom: 1em;
+    padding-right: 1em;
+    font-size: 1.7em; }
+  .content__body ul li {
+    margin-left: 1em;
+    width: calc(100% - 1em); }
 
 /*# sourceMappingURL=main.css.map */
